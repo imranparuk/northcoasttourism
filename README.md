@@ -1,122 +1,89 @@
-# Overview 🧐
+# gatsby-starter-help-center
 
-WebSheets Listing Page is an open-sourced Gatsby template that generates listing/directory websites based on Google Sheets data.
-The generated website will be a fast-loading static progressive web app with SEO and offline capabilities.
+Kick off your project with this help center boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
-## Features
+![preview](./preview.png)
 
-- Google Sheets as Content Management System (CMS)
-- Fast loading static site
-- Offline capable Progressive Web App (PWA)
-- SEO Optimised
-- Google analytics configured
-- Mobile responsive design
-- Dark/light mode
-- Share-to-socials button
-- Multiple layout combinations
-- Call to action buttons
+_This README is a brief overview only. You can find the **full documentation** at [help.dferber.de](https://help.dferber.de/). That documentation site was built with this help center. Visit it to see what the help center looks like in production._
 
-## Sponsor Development
+## 🚀 Quick start
 
-If you find this project helpful in any way, you can support my coffee intake in making this at https://www.buymeacoffee.com/sohafidz. ☕️
+1.  **Clone the starter.**
 
+    Use the Gatsby CLI to create a new site, specifying the help center starter.
 
-# Getting Started 🚀
+    ```shell
+    # create a new Gatsby site using the help center starter
+    gatsby new help-center dferber90/gatsby-starter-help-center
+    ```
 
-## Project Requirements
+1.  **Start developing.**
 
-1. [Node](https://nodejs.org/en/download/)
-2. [Gatsby CLI](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli) `npm install -g gatsby-cli`
+    Navigate into your new site’s directory and start it up.
 
-## Preparing the Project
+    ```shell
+    cd help-center/
+    gatsby develop
+    ```
 
-### Step 1: Preparing your Sheets data
+1.  **Open the source code and start editing!**
 
-1. Make a copy of this [google sheets template](https://docs.google.com/spreadsheets/d/17c2Fy1D5k2P7BkjmJoFIY_eohHBMM806_lHCYKzRtqM/copy#gid=72026853)
-2. Change the privacy setting to allow anyone with the link to view
-   - Click the **share button** and change the privacy to `Anyone on the Internet with this link can view`
-3. Fill in the google sheets with the general site information (on the `site` tab) and details of items you want to list \*on the `listing` tab)
-   - The tab names (`site`, `listing`) should **NOT** be changed.
+    Your site is now running at `http://localhost:8000`!
 
-### Step 2: Preparing your Google API key
+    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-1. Create a [Google API project](https://console.developers.google.com/projectcreate)
-2. Enable [Google Sheets API](https://console.developers.google.com/apis/library/sheets.googleapis.com?project=websheets&folder&organizationId) for that project
-   - Click the **ENABLE** button and select the project that you created
-3. Create the [Google API key](https://console.developers.google.com/apis/credentials) for that project
-   - Click **CREATE CREDENTIALS** button and select **API key**
+    Open the `help-center` directory in your code editor of choice and edit `content/articles/welcome/index.md`. Save your changes and the browser will update in real time!
 
-### Step 3: Preparing the Repository
+## 🧐 What's inside?
 
-1. Run `gatsby new [YOUR_SITE_NAME] tengkuhafidz/WebSheets-Listing-Page`
-2. Create `.env` file on the project root and add the following environment variables
-   - `GATSBY_GOOGLE_CREDENTIALS`="Google-Api-Key-With-Quatations"
-   - `GATSBY_SHEET_URL`="Google-Sheets-URL-With-Quotations"
+A quick look at the most important files and directories you'll need to edit.
 
-## Running the Project
+    .
+    |____README.md
+    |____gatsby-config.js
+    |____content
+    | |____welcome
+    | | |____index.md
+    | |____second-article
+    | | |____some-image.png
+    | | |____index.md
+    |____assets
+    | |____favicon.png
+    |____data
+    | |____collections.yml
+    | |____authors.yml
+    | |____avatars
+    | | |____dferber.png
+    | | |____amanda.jpg
+    | | |____bert.jpg
 
-### Running on Dev Environment
+1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
-1. Run `npm start`
-   - Your site will run at `http://localhost:8000`
-   - You graphiql will run at`http://localhost:8000/___graphql`
+2.  **`content/articles`**: This is the folder where you'll place your articles.
 
-### Running on Prod Environment
+3.  **`data/collections.yml`**: This file defines the collections of your help center. Each article will belong to one collection. A collection consists of many articles. A collection can have different sections which its articles may belong to.
 
-1. Run `npm run build`
-2. Run `npm run serve`
-   - Your site will run at `http://localhost:9000`
+4.  **`data/authors.yml`**: This file is where you'll list your authors. Every author needs an id, a name and an avatar. You can add an author to each article.
 
-### Troubleshooting
+5.  **`data/avatars`**: Place the author's avatars in this folder and use them in `authors.yml`.
 
-Having an issue? The following are common setup mistakes that might have caused it. Please ensure that the following are set properly.
+## 🎓 Learning Gatsby
 
-- Google Sheets privacy settings **MUST** minimally be set to `Anyone on the Internet with this link can view`
-- [Google Sheets API](https://console.developers.google.com/apis/library/sheets.googleapis.com) **MUST** be `ENABLED` for the project that you're using the API key of
-- The value of environment variables **MUST** be in between double quotations
-- Ensure that you have a `.env` file on your project root with the following params: `GATSBY_GOOGLE_CREDENTIALS`, `GATSBY_SHEET_URL`
+Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
 
-# Underlying Tech 🦾
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
-## Main Frameworks & API
+- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-- Gatsby
-- Typescript
-- TailwindCSS
-- Google Sheets API
+## 💫 Examples
 
-*With prettier, eslint, and husky configured out of the box.*
+Projects built with `gatsby-starter-help-center`:
 
-## Folder Structure
+- This repositorys docs itself at [help.dferber.de](https://help.dferber.de/)
+- [katakata.my](https://katakata.my/)
+- [help.tugify.com](https://help.tugify.com/)
+- [help.simplimail.co](https://help.simplimail.co/)
+- [support.bikecomparator.com](https://support.bikecomparator.com/)
+- [world-help.netlify.app](https://world-help.netlify.app/)
 
-```
-   .
-   ├── node_modules
-   ├── src
-   ├── static
-   ├── .gitignore
-   ├── .eslintrc.js
-   ├── .prettierrc.js
-   ├── gatsby-browser.js
-   ├── gatsby-config.js
-   ├── LICENSE
-   ├── yarn-lock.json
-   ├── package.json
-   ├── tailwind.config.js
-   ├── postcss.config.js
-   └── README.md
-```
-
-# About
-
-## Contact
-
-You may contact me via email at [h@fidz.dev](mailto:h@fidz.dev).
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+*...you can open a PR and add your project to this list once you're up and running*
